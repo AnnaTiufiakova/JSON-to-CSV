@@ -1,21 +1,25 @@
 # Purpose of the Project
 This project demonstrates a simple ETL pipeline using Apache Airflow, Python, and PostgreSQL. The goal is to automate semi-structured data collection from a public API, transform it into a structured format, and store it in a relational database for further analysis.
 
-Key Objectives:
-Extract: Fetch data from the NASA Near Earth Objects (NEO) API, which provides asteroid-related information in JSON format.
+### Key Objectives:
+#### Extract: 
 
-Transform:
+Fetch data from the NASA Near Earth Objects (NEO) API, which provides asteroid-related information in JSON format.
+
+#### Transform:
 
 Check for principal keys in the JSON response.
 Extract relevant data from a nested dictionary (near_earth_objects).
 Convert the structured data into a CSV file for better readability and storage efficiency.
 
-Load:
+#### Load:
 
 Create the necessary schema/table in PostgreSQL.
 Load the CSV file into the database for analysis and querying.
 
-Orchestrate: Use Apache Airflow to schedule and automate the pipeline execution.
+#### Orchestrate: 
+
+Use Apache Airflow to schedule and automate the pipeline execution.
 
 
 
@@ -28,11 +32,11 @@ Before installing Apache Airflow, make sure you have the following installed on 
 ## 1. Install Apache Airflow in Docker
 ### 1.1 Navigate to the directory where you will create your project folder:
 ```
-cd C:\Users\annav
+cd C:\Users\annav\Documents\DE\JSON to CSV\Example 1
 ```
 ### 1.2 Create the Airflow project folder (e.g., "airflow-docker"):
 ```
-mkdir C:\Users\annav\airflow-docker
+mkdir C:\Users\annav\Documents\DE\JSON to CSV\Example 1\airflow-docker
 ```
 ### 1.3 Navigate to this folder:
 ```
@@ -51,11 +55,11 @@ Open docker-compose.yaml in VSC. Locate the volumes: section and add these lines
 ```
     - ${AIRFLOW_PROJ_DIR:-.}/scripts:/opt/airflow/scripts
     - ${AIRFLOW_PROJ_DIR:-.}/data:/opt/airflow/data
-    - C:/Users/annav/Documents/DE/airflow-docker/data:/opt/airflow/data
-    - C:/Users/annav/Documents/DE/airflow-docker/scripts:/opt/airflow/scripts
+    - C:/Users/annav/Documents/DE/JSON to CSV/Example 1/airflow-docker/data:/opt/airflow/data
+    - C:/Users/annav/Documents/DE/JSON to CSV/Example 1/airflow-docker/scripts:/opt/airflow/scripts
 ```
 This ensures that scripts and data directories are mapped between your local machine and the Airflow container.
-(Replace "C:/Users/annav/Documents/DE/airflow-docker/data" and "C:/Users/annav/Documents/DE/airflow-docker/scripts"  with the corresponding paths on your local machine.)
+(Replace "C:/Users/annav/Documents/DE/JSON to CSV/Example 1/airflow-docker/data" and "C:/Users/annav/Documents/DE/JSON to CSV/Example 1/airflow-docker/scripts"  with the corresponding paths on your local machine.)
 
 ### 1.7 Create required folders in the project directory (in VSC terminal - Windows PowerShell):
 ```
@@ -70,14 +74,10 @@ This ensures that user and group permissions match between the host and the cont
 ## 2. Create Your Python Scripts
 Script 1: Fetches data from the NASA API, checks the main keys of the JSON, determines if the JSON is nested, retrieves the nested dictionary 'near_earth_objects,' converts the data to CSV, and saves it in /opt/airflow/data/.
 
-Script 2: Creates the schema/table and loads the CSV file into PostgreSQL.
-
-Save them in the scripts folder.
+Script 2: Creates the schema/table and loads the CSV file into PostgreSQL. Save them in the scripts folder.
 
 ## 3. Create the DAG File
-The DAG should orchestrate both Python scripts sequentially.
-
-Save it in the dags folder.
+The DAG should orchestrate both Python scripts sequentially. Save it in the `dags` folder.
 
 ## 4. Initialize the Airflow Instance
 ```
@@ -124,7 +124,7 @@ SELECT * FROM nasa_asteroids LIMIT 10;
 docker-compose stop
 ```
 
-Additional Notes
+#### Additional Notes<br>
 🔹To stop the Airflow services and free memory, run:
 
 ```
