@@ -1,0 +1,35 @@
+[2025-03-28T17:19:49.693+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-28T17:19:49.714+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nasa_data_pipeline.fetch_nasa_data manual__2025-03-28T17:19:35.033467+00:00 [queued]>
+[2025-03-28T17:19:49.733+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nasa_data_pipeline.fetch_nasa_data manual__2025-03-28T17:19:35.033467+00:00 [queued]>
+[2025-03-28T17:19:49.734+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-03-28T17:19:50.027+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): fetch_nasa_data> on 2025-03-28 17:19:35.033467+00:00
+[2025-03-28T17:19:50.040+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=852) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-03-28T17:19:50.043+0000] {standard_task_runner.py:72} INFO - Started process 854 to run task
+[2025-03-28T17:19:50.043+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'nasa_data_pipeline', 'fetch_nasa_data', 'manual__2025-03-28T17:19:35.033467+00:00', '--job-id', '178', '--raw', '--subdir', 'DAGS_FOLDER/nasa_data_pipeline.py', '--cfg-path', '/tmp/tmp5m3yxxi0']
+[2025-03-28T17:19:50.044+0000] {standard_task_runner.py:105} INFO - Job 178: Subtask fetch_nasa_data
+[2025-03-28T17:19:50.100+0000] {task_command.py:467} INFO - Running <TaskInstance: nasa_data_pipeline.fetch_nasa_data manual__2025-03-28T17:19:35.033467+00:00 [running]> on host 0b56b63854fa
+[2025-03-28T17:19:50.200+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='nasa_data_pipeline' AIRFLOW_CTX_TASK_ID='fetch_nasa_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-28T17:19:35.033467+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-28T17:19:35.033467+00:00'
+[2025-03-28T17:19:50.201+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-28T17:19:50.202+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-28T17:19:50.203+0000] {logging_mixin.py:190} INFO - Current task name:fetch_nasa_data state:running start_date:2025-03-28 17:19:49.715223+00:00
+[2025-03-28T17:19:50.203+0000] {logging_mixin.py:190} INFO - Dag name:nasa_data_pipeline and current dag run status:running
+[2025-03-28T17:19:50.203+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-28T17:19:50.205+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-03-28T17:19:50.208+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/scripts/fetch_data.py']
+[2025-03-28T17:19:50.227+0000] {subprocess.py:99} INFO - Output:
+[2025-03-28T17:19:53.656+0000] {subprocess.py:106} INFO - dict_keys(['links', 'element_count', 'near_earth_objects'])
+[2025-03-28T17:19:53.657+0000] {subprocess.py:106} INFO - dict_keys(['2025-03-30', '2025-03-28', '2025-03-29'])
+[2025-03-28T17:19:53.658+0000] {subprocess.py:106} INFO - Keys for NEO on 2025-03-30: dict_keys(['links', 'id', 'neo_reference_id', 'name', 'nasa_jpl_url', 'absolute_magnitude_h', 'estimated_diameter', 'is_potentially_hazardous_asteroid', 'close_approach_data', 'is_sentry_object'])
+[2025-03-28T17:19:53.659+0000] {subprocess.py:106} INFO - Data saved successfully as nasa_neo_data.csv
+[2025-03-28T17:19:53.865+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-03-28T17:19:53.906+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-28T17:19:53.907+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=nasa_data_pipeline, task_id=fetch_nasa_data, run_id=manual__2025-03-28T17:19:35.033467+00:00, execution_date=20250328T171935, start_date=20250328T171949, end_date=20250328T171953
+[2025-03-28T17:19:53.942+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-03-28T17:19:53.943+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-03-28T17:19:53.944+0000] {logging_mixin.py:190} INFO - Dag name:nasa_data_pipeline queued_at:2025-03-28 17:19:35.466167+00:00
+[2025-03-28T17:19:53.944+0000] {logging_mixin.py:190} INFO - Task hostname:0b56b63854fa operator:BashOperator
+[2025-03-28T17:19:53.978+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-28T17:19:54.017+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-28T17:19:54.019+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
