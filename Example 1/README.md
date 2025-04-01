@@ -1,3 +1,6 @@
+***
+![Automated ETL Pipeline for NASA Near Earth Objects Data using Apache Airflow and PostgreSQL](png/etl.jpg)
+
 # Purpose of the Project
 This project demonstrates a simple ETL pipeline using Apache Airflow, Python, and PostgreSQL. The goal is to automate semi-structured data collection from a public API, transform it into a structured format, and store it in a relational database for further analysis.
 
