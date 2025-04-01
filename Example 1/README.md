@@ -1,4 +1,4 @@
-***
+
 ![Automated ETL Pipeline for NASA Near Earth Objects Data using Apache Airflow and PostgreSQL](png/etl.jpg)
 
 # Purpose of the Project
