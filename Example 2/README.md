@@ -6,12 +6,12 @@ This project involves retrieving JSON data via an API request and processing the
 ### API Request Details<br>
 🔹Endpoint: https://connection.keboola.com/v2/storage/components/keboola.python-transformation-v2/configs<br>
 🔹Headers:<br>
-	🔹X-StorageApi-Token: 9832-638325-OeNl9pQN0TKGlYaAetk7BWu4tNnZIORKHxNtCknG<br>
-	🔹Content-Type: application/json
+	- X-StorageApi-Token: 9832-638325-OeNl9pQN0TKGlYaAetk7BWu4tNnZIORKHxNtCknG<br>
+	- Content-Type: application/json
 
 ### Data Transformation Requirements<br>
 🔹Extract the input tables from the following JSON path:<br>
-configuration >> storage >> input >> tables
+configuration >> storage >> input >> tables<br>
 🔹Represent each table within the nested array as an individual row in the output dataset.<br>
 🔹Include the parent object identifier as a new column labeled "component_id".<br>
 🔹Name the output file result_table.csv.<br>
