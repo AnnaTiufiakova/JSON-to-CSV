@@ -1,0 +1,6 @@
+source,destination,where_column,where_values,where_operator,columns,keep_internal_timestamp_column,component_id,id
+in.c-interview_tables.companies,companies.csv,,[],eq,[],False,1017652246,d3e5d3bd-37ce-4525-aee2-2f52635d544e
+in.c-interview_tables.consumer_complaints,consumer_complaints.csv,,[],eq,[],False,1017652246,068e5a3b-e4d6-4863-8fb8-bf981fc49f60
+in.c-interview_tables.product,product.csv,,[],eq,[],False,1017652246,2aed9698-dcb0-49ff-8c8f-c59cf3fd1471
+in.c-interview.consumer_complaints,consumer_complaints.csv,,[],eq,[],False,1017660743,31589a9d-bf7b-4ade-88be-8290d9664eab
+in.c-interview_tables_data_analyst.fill_data,order_data.csv,,[],eq,[],False,1095550933,69d0bf73-6f90-46fe-8750-0290628faf74
